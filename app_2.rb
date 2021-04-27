@@ -19,13 +19,28 @@ user = HumanPlayer.new(human_player_name)
 #Initialisation des ennemis
 player1 = Player.new("Josiane")
 player2 = Player.new("José")
-
-enemies = Array.new
-enemies << Player
+enemies = [player1, player2]
 
 #Combat
 while user.life_points > 0 && (player1.life_points > 0 || player2.life_points > 0)
   user.show_state
+  
+  puts " "
+  puts "Quelle action veux-tu effectuer ?"
+  puts " "
+  puts "a - chercher une meilleure arme"
+  puts "s - chercher à se soigner"
+  puts " "
+  puts "attaquer un joueur en vue :"
+  i = 0
+  enemies.each do |enemy|
+    puts "#{i} - #{enemy.show_state}"
+    i += 1
+  end
+  puts "> "
+  input = gets.chomp
+
+
 end
 
 #Fin du jeu
