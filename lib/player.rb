@@ -20,4 +20,16 @@ class Player
       puts "Le joueur #{@name} a été tué !"
     end
   end
+
+  def attacks(player)
+    puts "#{@name} attaque #{player.name}" 
+    damage_num = compute_damage
+    player.gets_damage(damage_num)
+    puts "il lui inflige #{damage_num} points de dommages"
+  end
+
+  def compute_damage
+    return rand(1..6)
+  end
+
 end
