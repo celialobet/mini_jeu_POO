@@ -24,7 +24,7 @@ enemies = [player1, player2]
 #Combat
 while user.life_points > 0 && (player1.life_points > 0 || player2.life_points > 0)
   user.show_state
-  
+
   puts " "
   puts "Quelle action veux-tu effectuer ?"
   puts " "
@@ -40,7 +40,26 @@ while user.life_points > 0 && (player1.life_points > 0 || player2.life_points > 
   puts "> "
   input = gets.chomp
 
+  case input
+  when 'a'
+    user.search_weapon
+  when 's'
+    user.search_health_pack
+  when '0'
+    user.attacks(player1)
+  when '1'
+    user.attacks(player2)
+  else 
+    "Wrong input"
+  end
 
+  #Tour des ennemis de riposter
+  puts "Les autres joueurs t'attaquent !"
+  enemies.each do |enemy|
+    if enemy.life_points > 0
+      enemy.attacks(user)
+    end
+  end
 end
 
 #Fin du jeu
