@@ -17,8 +17,8 @@ human_player_name = gets.chomp
 user = HumanPlayer.new(human_player_name)
 
 #Initialisation des ennemis
-player1 = Player.new("Josiane")
-player2 = Player.new("José")
+player1 = Player.new("Joe")
+player2 = Player.new("Jane")
 enemies = [player1, player2]
 
 #Combat
@@ -34,7 +34,7 @@ while user.life_points > 0 && (player1.life_points > 0 || player2.life_points > 
   puts "attaquer un joueur en vue :"
   i = 0
   enemies.each do |enemy|
-    puts "#{i} - #{enemy.show_state}"
+    print "#{i} - #{enemy.show_state}"
     i += 1
   end
   puts "> "
@@ -50,7 +50,7 @@ while user.life_points > 0 && (player1.life_points > 0 || player2.life_points > 
   when '1'
     user.attacks(player2)
   else 
-    "Wrong input"
+    "Selectionnez à nouveau"
   end
 
   #Tour des ennemis de riposter
