@@ -34,10 +34,10 @@ while user.life_points > 0 && (player1.life_points > 0 || player2.life_points > 
   puts "attaquer un joueur en vue :"
   i = 0
   enemies.each do |enemy|
-    print "#{i} - #{enemy.show_state}"
+    puts "#{i} - #{enemy.show_state}"
     i += 1
   end
-  puts "> "
+  print "> "
   input = gets.chomp
 
   case input

@@ -7,10 +7,11 @@ class Game
     @players_left = 10
   end
 
-  def kill_player(player)
+  def kill_player
     @enemies_in_sight.each do |player|
-    if player.life_points <= O
-      @enemies_in_sight.delete(player)
+      if player.life_points <= 0
+        @enemies_in_sight.delete(player)
+      end
     end
   end
 
@@ -93,5 +94,4 @@ class Game
       end
     end
   end
-end
 end

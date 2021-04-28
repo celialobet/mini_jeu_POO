@@ -8,9 +8,9 @@ class Player
 
   def show_state
     if @life_points > 0
-      puts "#{@name} a #{@life_points} points de vie"
+      return "#{@name} a #{@life_points} points de vie"
     elsif @life_points <= 0
-      puts "#{@name} a 0 points de vie"
+      return "#{@name} a 0 points de vie"
     end
   end
 
@@ -24,8 +24,8 @@ class Player
   def attacks(player)
     puts "#{@name} attaque #{player.name}" 
     damage_num = compute_damage
-    player.gets_damage(damage_num)
     puts "il lui inflige #{damage_num} points de dommages"
+    player.gets_damage(damage_num)
   end
 
   def compute_damage
